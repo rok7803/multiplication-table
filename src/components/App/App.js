@@ -36,8 +36,8 @@ class App extends React.Component {
     if(backward !== 0) direction = backward;
 
     const checked = series.reduce((a,b) => a + b, 0);
-    if(checked === 54 && checked54) series.unshift(1);
-    if(checked === 77) series.unshift(1);
+    if(checked === 54 && checked54 && termTen !== 0) series.unshift(1);
+    if(checked === 77 && termTwelve !== 0) series.unshift(1);
 
     console.log('['+series+'] '+term+' '+direction+' '+checked);
   }
