@@ -11,7 +11,7 @@ class App extends React.Component {
   getSubmit(two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, termTen, termTwelve, forward, random, backward){
     let series = [];
     let term, direction;
-
+    let checked54 = true;
     if(two !== 0) series.push(two);
     if(three !== 0) series.push(three);
     if(four !== 0) series.push(four);
@@ -21,8 +21,14 @@ class App extends React.Component {
     if(eight !== 0) series.push(eight);
     if(nine !== 0) series.push(nine);
     if(ten !== 0) series.push(ten);
-    if(eleven !== 0) series.push(eleven);
-    if(twelve !== 0) series.push(twelve);
+    if(eleven !== 0){ 
+      series.push(eleven);
+      checked54 = false;
+    }
+    if(twelve !== 0){
+      series.push(twelve);
+      checked54 = false;
+    }
     if(termTen !== 0) term = termTen;
     if(termTwelve !== 0) term = termTwelve;
     if(forward !== 0) direction = forward;
@@ -30,8 +36,9 @@ class App extends React.Component {
     if(backward !== 0) direction = backward;
 
     const checked = series.reduce((a,b) => a + b, 0);
-    if(checked === 54 || checked === 77) series.unshift(1);
-    
+    if(checked === 54 && checked54) series.unshift(1);
+    if(checked === 77) series.unshift(1);
+
     console.log('['+series+'] '+term+' '+direction+' '+checked);
   }
   render(){
