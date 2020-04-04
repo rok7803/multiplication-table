@@ -5,7 +5,6 @@ class Settings extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            active: {set: true, unset: false},
             all: {value: 0, checked: false},
             two: {value: 2, checked: true},
             three: {value: 3, checked: true},
@@ -16,8 +15,8 @@ class Settings extends React.Component{
             eight: {value: 8, checked: true},
             nine: {value: 9, checked: true},
             ten: {value: 10, checked: true},
-            eleven: {value: 11, checked: false},
-            twelve: {value: 12, checked: false},
+            eleven: {value: 0, checked: false},
+            twelve: {value: 0, checked: false},
             termTen: 10,
             termTwelve: 0,
             forward: 1,
