@@ -8,7 +8,7 @@ class SetTable extends React.Component{
             <table className="Table">
                 <tbody>
                     {this.props.series.map(serie =>{
-                        return <Table serie={serie} term={this.props.term} />;
+                        return <Table key={serie} serie={serie} term={this.props.term} square={this.props.square} />;
                     })}
                 </tbody>
             </table>
