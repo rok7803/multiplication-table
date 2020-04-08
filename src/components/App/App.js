@@ -76,12 +76,19 @@ class App extends React.Component {
       <div className="App">
         <h1>Multiplication Table</h1>
         {this.state.showSettings && <Settings getSubmit={this.getSubmit}/>}
-        {this.state.showTable && <SetTable series={series} term={term} square={square} />}
+        {this.state.showTable && <SetTable 
+                                    series={series}
+                                    term={term}
+                                    square={square} />}
         {this.state.showTable && <div className="Table-button">
           <button onClick={this.toggleExerciseOn}>Start Exercise</button>
           <button onClick={this.toggleSettingsOn}>Show Settings</button>
         </div>}
-        {this.state.showExercise && <SetExercise series={series} step={step} term={term} direction={direction}/>}
+        {this.state.showExercise && <SetExercise 
+                                      series={series}
+                                      step={step}
+                                      term={term}
+                                      direction={direction} />}
         {this.state.showExercise && <div className="Exercise-button">
           <button>Reset</button>
           <button onClick={this.toggleSettingsOn}>Show Settings</button>
