@@ -20,3 +20,16 @@ h1 {
   text-align: center;
   font-size: 1.8rem;
 }
+
+.Table-button{
+  display: flex;
+  justify-content: space-between;
+  width: 11%;
+  margin-bottom: 0.5rem;
+}
+
+.Exercise-button{
+  display: flex;
+  justify-content: space-between;
+  width: 8%
+}
