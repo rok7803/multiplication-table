@@ -2,18 +2,40 @@ import React from 'react';
 import './App.css';
 import Settings from '../Settings/Settings';
 import SetTable from '../SetTable/SetTable';
+import SetExercise from '../SetExercise/SetExercise';
 
-const series = [1,2,3,4,5,6,7,8,9,10];
+//const series = [1,2,3,4,5,6,7,8,9,10];
+const series = [2];
+let step = 1;
 const term = 10;
 const direction = 1;
 const square = false;
 
 class App extends React.Component {
-  getSubmit(two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, termTen, termTwelve, forward, random, backward){
+  constructor(props){
+    super(props);
+    this.state = {
+      showSettings: true,
+      showTable: true, //should be FALSE
+      showExercise: true //should be FALSE
+    };
+    this.toggleSettingsOn = this.toggleSettingsOn.bind(this);
+    this.toggleExerciseOn = this.toggleExerciseOn.bind(this);
+    this.getSubmit = this.getSubmit.bind(this);
+  }
+  toggleSettingsOn(){
+    this.setState({ showSettings: true, showTable: false, showExercise: false})
+  }
+  toggleExerciseOn(){
+    this.setState({ showExercise: true, showTable: false });
+  }
+  getSubmit(two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, termTen, termTwelve, forward, random, backward, showSettings, showTable){
     let series = [];
+    let step = 1;
     let term, direction;
     let checked54 = true;
     let square = false;
+    
     if(two !== 0) series.push(two);
     if(three !== 0) series.push(three);
     if(four !== 0) series.push(four);
@@ -46,15 +68,24 @@ class App extends React.Component {
       series.unshift(1);
       square = true;
     }
-
+    this.setState({showSettings: showSettings, showTable: showTable});
     console.log('['+series+'] '+term+' '+direction+' '+checked+' '+checked54+' '+square);
   }
   render(){
     return (
       <div className="App">
         <h1>Multiplication Table</h1>
-        <Settings getSubmit={this.getSubmit}/>
-        <SetTable series={series} term={term} square={square} />
+        {this.state.showSettings && <Settings getSubmit={this.getSubmit}/>}
+        {this.state.showTable && <SetTable series={series} term={term} square={square} />}
+        {this.state.showTable && <div className="Table-button">
+          <button onClick={this.toggleExerciseOn}>Start Exercise</button>
+          <button onClick={this.toggleSettingsOn}>Show Settings</button>
+        </div>}
+        {this.state.showExercise && <SetExercise series={series} step={step} term={term} direction={direction}/>}
+        {this.state.showExercise && <div className="Exercise-button">
+          <button>Reset</button>
+          <button onClick={this.toggleSettingsOn}>Show Settings</button>
+        </div>}
       </div>
     );
   }
