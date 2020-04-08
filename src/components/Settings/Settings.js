@@ -21,7 +21,9 @@ class Settings extends React.Component{
             termTwelve: 0,
             forward: 1,
             random: 0,
-            backward: 0
+            backward: 0,
+            showSettings: false,
+            showTable: true
         }
         this.handleAllChange = this.handleAllChange.bind(this);
         this.handleTwoChange = this.handleTwoChange.bind(this);
@@ -405,7 +407,9 @@ class Settings extends React.Component{
             this.state.termTwelve,
             this.state.forward,
             this.state.random,
-            this.state.backward
+            this.state.backward,
+            this.state.showSettings,
+            this.state.showTable
             );
         else alert('Please, choose a serie!');
         event.preventDefault();
