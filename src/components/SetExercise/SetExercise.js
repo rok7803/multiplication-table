@@ -32,8 +32,8 @@ class SetExercise extends React.Component{
         //this.renderMultiplier2 = this.renderMultiplier2.bind(this);
         this.nextExercise = this.nextExercise.bind(this);
         
-        //this.stopExercise = this.stopExercise(this);
-        //this.resetExercise = this.resetExercise.bind(this);
+        this.stopExercise = this.stopExercise.bind(this);
+        this.resetExercise = this.resetExercise.bind(this);
     }
     componentDidMount(){
         //this.setMultiplier1();
@@ -175,12 +175,11 @@ class SetExercise extends React.Component{
             resultButton3: 0,
             counterBackward10: 10,
             counterBackward12: 12
-        });
-        this.getResult();
+        }, () => {this.getResult();});    
     }
     stopExercise(){
         alert('You did it!');
-        this.resetExercise();
+        this.resetExercise(this);
     }
     render(){
         return(
