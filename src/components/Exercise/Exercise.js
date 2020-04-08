@@ -21,7 +21,7 @@ class Exercise extends React.Component{
         }
         else alert('Try Again!');
         if(this.state.count === 9){
-            this.setState({count: 0})
+            this.setState({count: 0});
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button1);
@@ -37,7 +37,7 @@ class Exercise extends React.Component{
         }
         else alert('Try Again!');
         if(this.state.count === 9){
-            this.setState({count: 0})
+            this.setState({count: 0});
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button2);
@@ -53,7 +53,7 @@ class Exercise extends React.Component{
         }
         else alert('Try Again!');
         if(this.state.count === 9){
-            this.setState({count: 0})
+            this.setState({count: 0});
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button3);
