@@ -13,21 +13,23 @@ class Exercise extends React.Component{
         this.handleResultButton2 = this.handleResultButton2.bind(this);
         this.handleResultButton3 = this.handleResultButton3.bind(this);
     }
-    async handleResultButton1(event){
-        let count;
+    /*async*/ handleResultButton1(event){
+        let count, pass;
         if(this.props.result === this.props.button1){
             this.props.nextExercise();
             count = this.state.count + 1;
-            await this.setState({
+            pass = true;
+            /*await*/ this.setState({
                         count: count,
                         pass: true
                     })
         }
         else{
-            await this.setState({pass: false})
+            pass = false;
+            //await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === this.props.term && this.state.pass){
+        if(count === this.props.term && pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -35,21 +37,23 @@ class Exercise extends React.Component{
         console.log('handleResultButtonx: '+this.state.count);
         event.preventDefault();
     }
-    async handleResultButton2(event){
-        let count;
+    /*async*/ handleResultButton2(event){
+        let count, pass;
         if(this.props.result === this.props.button2){
             this.props.nextExercise();
             count = this.state.count + 1;
-            await this.setState({
+            pass = true;
+            /*await*/ this.setState({
                         count: count,
                         pass: true
                     })
         }
         else{
-            await this.setState({pass: false})
+            pass = false;
+            //await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === this.props.term && this.state.pass){
+        if(count === this.props.term && pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -57,21 +61,23 @@ class Exercise extends React.Component{
         console.log('handleResultButtonx: '+this.state.count);
         event.preventDefault();
     }
-    async handleResultButton3(event){
-        let count;
+    /*async*/ handleResultButton3(event){
+        let count, pass;
         if(this.props.result === this.props.button3){
             this.props.nextExercise();
             count = this.state.count + 1;
-            await this.setState({
+            pass = true;
+            /*await*/ this.setState({
                         count: count,
                         pass: true
                     })
         }
         else{
-            await this.setState({pass: false})
+            pass = false;
+            //await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === this.props.term && this.state.pass){
+        if(count === this.props.term && pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
