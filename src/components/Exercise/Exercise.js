@@ -18,7 +18,7 @@ class Exercise extends React.Component{
         if(this.props.result === this.props.button1){
             this.props.nextExercise();
             count = this.state.count + 1;
-            this.setState({
+            await this.setState({
                         count: count,
                         pass: true
                     })
@@ -27,7 +27,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 9 && this.state.pass){
+        if(this.state.count === 10 && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -40,7 +40,7 @@ class Exercise extends React.Component{
         if(this.props.result === this.props.button2){
             this.props.nextExercise();
             count = this.state.count + 1;
-            this.setState({
+            await this.setState({
                         count: count,
                         pass: true
                     })
@@ -49,7 +49,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 9){
+        if(this.state.count === 10 && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -62,7 +62,7 @@ class Exercise extends React.Component{
         if(this.props.result === this.props.button3){
             this.props.nextExercise();
             count = this.state.count + 1;
-            this.setState({
+            await this.setState({
                         count: count,
                         pass: true
                     })
@@ -71,7 +71,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 9){
+        if(this.state.count === 10 && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
