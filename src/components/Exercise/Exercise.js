@@ -27,7 +27,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 10 && this.state.pass){
+        if(this.state.count === this.props.term && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -49,7 +49,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 10 && this.state.pass){
+        if(this.state.count === this.props.term && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
@@ -71,7 +71,7 @@ class Exercise extends React.Component{
             await this.setState({pass: false})
             alert('Try Again!');
         }
-        if(this.state.count === 10 && this.state.pass){
+        if(this.state.count === this.props.term && this.state.pass){
             this.setState({count: 0});
             this.props.stopExercise();
         }
