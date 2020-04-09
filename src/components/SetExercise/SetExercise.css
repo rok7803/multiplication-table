@@ -1,9 +1,14 @@
-.Multiplier{
-    text-align: center;
+.Exercise-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
 }
-.Exercise-table-field{
-    padding: 0.2rem;
+.Exercise-table{
+    margin: 0.3rem 0;
 }
-.Exercise-table-field button{
-    padding: 0.1rem 0.6rem;
-}
+.Exercise-button{
+    display: flex;
+    justify-content: space-between;
+    width: 14%;
+  }
