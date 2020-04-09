@@ -4,10 +4,10 @@ import Settings from '../Settings/Settings';
 import SetTable from '../SetTable/SetTable';
 import SetExercise from '../SetExercise/SetExercise';
 
-//const series = [1,2,3,4,5,6,7,8,9,10];
-const series = [2];
+const series = [1,2,3,4,5,6,7,8,9,10];
+//const series = [2];
 let step = 1;
-const term = 10;
+const term = 3;
 const direction = 1;
 const square = false;
 
@@ -17,10 +17,13 @@ class App extends React.Component {
     this.state = {
       showSettings: true,
       showTable: true, //should be FALSE
-      showExercise: true //should be FALSE
+      showExercise: true, //should be FALSE
+      reset: false
     };
     this.toggleSettingsOn = this.toggleSettingsOn.bind(this);
     this.toggleExerciseOn = this.toggleExerciseOn.bind(this);
+    this.changeReset = this.changeReset.bind(this);
+    this.getResetCall = this.getResetCall.bind(this);
     this.getSubmit = this.getSubmit.bind(this);
   }
   toggleSettingsOn(){
@@ -28,6 +31,16 @@ class App extends React.Component {
   }
   toggleExerciseOn(){
     this.setState({ showExercise: true, showTable: false });
+  }
+  changeReset(){
+    this.setState({
+      reset: true
+    });
+  }
+  getResetCall(){
+    this.setState({
+      reset: false
+    })
   }
   getSubmit(two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, termTen, termTwelve, forward, random, backward, showSettings, showTable){
     let series = [];
@@ -69,7 +82,7 @@ class App extends React.Component {
       square = true;
     }
     this.setState({showSettings: showSettings, showTable: showTable});
-    console.log('['+series+'] '+term+' '+direction+' '+checked+' '+checked54+' '+square);
+    //console.log('['+series+'] '+term+' '+direction+' '+checked+' '+checked54+' '+square);
   }
   render(){
     return (
@@ -88,11 +101,10 @@ class App extends React.Component {
                                       series={series}
                                       step={step}
                                       term={term}
-                                      direction={direction} />}
-        {this.state.showExercise && <div className="Exercise-button">
-          <button>Reset</button>
-          <button onClick={this.toggleSettingsOn}>Show Settings</button>
-        </div>}
+                                      direction={direction}
+                                      reset={this.state.reset}
+                                      resetCall={this.getResetCall} 
+                                      settingsOn={this.toggleSettingsOn}  />}
       </div>
     );
   }
