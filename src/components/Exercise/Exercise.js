@@ -6,27 +6,37 @@ class Exercise extends React.Component{
         super(props);
         this.state = {
             count: 0,
-            pass: false
+            //pass: false
         }
 
         this.handleResultButton1 = this.handleResultButton1.bind(this);
         this.handleResultButton2 = this.handleResultButton2.bind(this);
         this.handleResultButton3 = this.handleResultButton3.bind(this);
     }
-    /*async*/ handleResultButton1(event){
+    componentDidUpdate(prevProps){
+        if(this.props.count !== prevProps.count){    
+            this.setState({
+                count: 0
+            });
+            console.log('Inside if of componentDidUpdate');
+        }
+        //console.log('Inside componentDidUpdate');
+    }
+    handleResultButton1(event){
         let count, pass;
+        if(this.state.count === 0) this.props.startExercise();
         if(this.props.result === this.props.button1){
             this.props.nextExercise();
             count = this.state.count + 1;
             pass = true;
-            /*await*/ this.setState({
-                        count: count,
-                        pass: true
-                    })
+            this.setState({
+                count: count,
+                //pass: true
+            })
         }
         else{
             pass = false;
-            //await this.setState({pass: false})
+            //this.setState({pass: false})
             alert('Try Again!');
         }
         if(count === this.props.term && pass){
@@ -34,23 +44,24 @@ class Exercise extends React.Component{
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button1);
-        console.log('handleResultButtonx: '+this.state.count);
+        //console.log('handleResultButtonx: '+this.state.count);
         event.preventDefault();
     }
-    /*async*/ handleResultButton2(event){
+    handleResultButton2(event){
         let count, pass;
+        if(this.state.count === 0) this.props.startExercise();
         if(this.props.result === this.props.button2){
             this.props.nextExercise();
             count = this.state.count + 1;
             pass = true;
-            /*await*/ this.setState({
-                        count: count,
-                        pass: true
-                    })
+            this.setState({
+                count: count,
+                //pass: true
+            })
         }
         else{
             pass = false;
-            //await this.setState({pass: false})
+            //this.setState({pass: false})
             alert('Try Again!');
         }
         if(count === this.props.term && pass){
@@ -58,23 +69,24 @@ class Exercise extends React.Component{
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button2);
-        console.log('handleResultButtonx: '+this.state.count);
+        //console.log('handleResultButtonx: '+this.state.count);
         event.preventDefault();
     }
-    /*async*/ handleResultButton3(event){
+    handleResultButton3(event){
         let count, pass;
+        if(this.state.count === 0) this.props.startExercise();
         if(this.props.result === this.props.button3){
             this.props.nextExercise();
             count = this.state.count + 1;
             pass = true;
-            /*await*/ this.setState({
-                        count: count,
-                        pass: true
-                    })
+            this.setState({
+                count: count,
+                //pass: true
+            })
         }
         else{
             pass = false;
-            //await this.setState({pass: false})
+            //this.setState({pass: false})
             alert('Try Again!');
         }
         if(count === this.props.term && pass){
@@ -82,7 +94,7 @@ class Exercise extends React.Component{
             this.props.stopExercise();
         }
         //console.log(this.props.result+' '+this.props.button3);
-        console.log('handleResultButtonx: '+this.state.count);
+        //console.log('handleResultButtonx: '+this.state.count);
         event.preventDefault();
     }
     renderMultiplier1(){
