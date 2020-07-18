@@ -60,7 +60,7 @@ class SetExercise extends React.Component{
             multiplier = this.state.multiplier + this.props.step;
             this.setState({multiplier: multiplier}/*, () => {multiplier = this.state.multiplier}*/);
         }
-        else if(this.props.direction === 2 && this.props.term === 10 && this.state.counter < this.props.term){
+        else if(this.props.direction === 2 && this.props.term === 10/* && this.state.counter < this.props.term*/){
             multiplier = Math.floor(Math.random()*10+1);
             counter = this.state.counter + 1;
             this.setState({
@@ -68,7 +68,7 @@ class SetExercise extends React.Component{
                 counter: counter
             });
         }
-        else if(this.props.direction === 2 && this.props.term === 12 && this.state.counter < this.props.term){
+        else if(this.props.direction === 2 && this.props.term === 12/* && this.state.counter < this.props.term*/){
             multiplier = Math.floor(Math.random()*12+1);
             counter = this.state.counter + 1;
             this.setState({
@@ -76,7 +76,7 @@ class SetExercise extends React.Component{
                 counter: counter
             });
         }
-        else if(this.props.direction === 3 && this.props.term === 10 && this.state.counterBackward10 > 0){
+        else if(this.props.direction === 3 && this.props.term === 10/* && this.state.counterBackward10 > 0*/){
             multiplier = this.state.counterBackward10;
             counterBackward10 = this.state.counterBackward10 -1 ;
             this.setState({
@@ -84,7 +84,7 @@ class SetExercise extends React.Component{
                 counterBackward10: counterBackward10
             });
         }
-        else if(this.props.direction === 3 && this.props.term === 12 && this.state.counterBackward12 > 0){
+        else if(this.props.direction === 3 && this.props.term === 12/* && this.state.counterBackward12 > 0*/){
             multiplier = this.state.counterBackward12;
             counterBackward12 = this.state.counterBackward12 - 1;
             this.setState({multiplier: multiplier,
