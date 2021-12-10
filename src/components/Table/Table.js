@@ -7,9 +7,14 @@ class Table extends React.Component{
         //console.log(this.props.term);
         for(let i=0;i<this.props.term;i++){
             //console.log(i);
-            if(this.props.square && this.props.serie > 0 && (i+1) / this.props.serie === 1) 
-            rows.push(<td key={this.props.serie+(i+1)} className="Square">{this.props.serie} &#8729; {i+1}</td>);
-            else rows.push(<td key={this.props.serie+(i+1)} className="Serie">{this.props.serie} &#8729; {i+1}</td>); 
+            if(this.props.square && this.props.serie > 0 && (i+1) / this.props.serie === 1){
+                //multiplication dot: &#8729;
+                rows.push(<td key={this.props.serie+(i+1)}
+                className="Square">{this.props.serie*(i+1)}</td>);
+            } else { 
+                rows.push(<td key={this.props.serie+(i+1)} 
+                className="Serie">{this.props.serie*(i+1)}</td>); 
+            }
         }
         return rows;
     }

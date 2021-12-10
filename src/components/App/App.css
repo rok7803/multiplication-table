@@ -27,3 +27,18 @@ h1 {
   width: 11%;
   margin-bottom: 0.5rem;
 }
+@media screen and (max-width: 1024px){
+  .Table-button{
+      width: 20%;
+  }
+}
+@media screen and (max-width: 640px){
+  .Table-button{
+      width: 32%;
+  }
+}
+@media screen and (max-width: 480px){
+  .Table-button{
+      width: 58%;
+  }
+}
