@@ -187,8 +187,9 @@ class SetExercise extends React.Component{
         let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
         let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
         let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
+        let hours = ("0" + (Math.floor(timerTime/360000000) % 60)).slice(-2);
         //let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
-        alert('You did it! Your time: '+minutes+':'+seconds+':'+centiseconds);
+        alert('You did it! Your time: '+hours+':'+minutes+':'+seconds+'.'+centiseconds);
         this.resetExercise();
     }
     resetExercise(){
