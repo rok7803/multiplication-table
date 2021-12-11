@@ -2,7 +2,7 @@
   "name": "multiplication-table",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wolf7803.github.io/multiplication-table",
+  "homepage": "https://wolf7803.github.io/multiplication-table/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
