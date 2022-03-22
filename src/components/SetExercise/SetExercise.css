@@ -16,12 +16,13 @@
 
 @media screen and (max-width: 1400px){
     .Exercise-button{
-        width: 20%;
+        justify-content: center;
+        width: 50%;
     }
 }
 @media screen and (max-width: 560px) {
     .Exercise-button{
-        width: 40%;
+        width: 100%;
     }
     
 }
