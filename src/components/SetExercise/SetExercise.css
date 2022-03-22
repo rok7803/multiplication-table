@@ -11,4 +11,17 @@
     display: flex;
     justify-content: space-between;
     width: 14%;
-  }
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px){
+    .Exercise-button{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 560px) {
+    .Exercise-button{
+        width: 40%;
+    }
+    
+}
