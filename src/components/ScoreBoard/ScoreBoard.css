@@ -1,0 +1,12 @@
+.Score-board-div{
+    margin-top: 4.5em;
+}
+h4{
+    margin: 0 auto;
+    width: 6em;
+}
+.Score-board-table{
+    width: 240px;
+    height: 360px;
+    border: 1px solid #000;
+}
