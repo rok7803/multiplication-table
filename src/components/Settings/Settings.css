@@ -1,8 +1,10 @@
 .choose {
     padding: .22rem 1rem;
 }
-h4{
+.heading{
     padding: .29rem 0;
     font-size: 1.2rem;
     margin: 0;
+    /*text-align: left;*/
+    width: 10em;
 }
