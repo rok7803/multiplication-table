@@ -3,6 +3,7 @@ import './App.css';
 import Settings from '../Settings/Settings';
 import SetTable from '../SetTable/SetTable';
 import SetExercise from '../SetExercise/SetExercise';
+import ScoreBoard from '../ScoreBoard/ScoreBoard';
 
 //const series = [1,2,3,4,5,6,7,8,9,10];
 //const series = [2];
@@ -23,6 +24,7 @@ class App extends React.Component {
       showSettings: true,
       showTable: false, //should be FALSE
       showExercise: false, //should be FALSE
+      showScoreBoard: false, //should be FALSE
       reset: false
     };
     this.toggleSettingsOn = this.toggleSettingsOn.bind(this);
@@ -32,10 +34,10 @@ class App extends React.Component {
     this.getSubmit = this.getSubmit.bind(this);
   }
   toggleSettingsOn(){
-    this.setState({ showSettings: true, showTable: false, showExercise: false})
+    this.setState({ showSettings: true, showTable: false, showExercise: false, showScoreBoard: false})
   }
   toggleExerciseOn(){
-    this.setState({ showExercise: true, showTable: false });
+    this.setState({ showExercise: true, showScoreBoard: true, showTable: false });
   }
   changeReset(){
     this.setState({
@@ -109,6 +111,7 @@ class App extends React.Component {
                                       reset={this.state.reset}
                                       resetCall={this.getResetCall} 
                                       settingsOn={this.toggleSettingsOn}  />}
+        {this.state.showScoreBoard && <ScoreBoard />}
       </div>
     );
   }
