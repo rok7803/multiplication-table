@@ -8,7 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "gh-pages": "^3.2.3",
-    "immer": "^9.0.7",
+    "immer": "^9.0.21",
     "node-notifier": "^10.0.0",
     "object-path": "^0.11.8",
     "react": "^16.13.1",
